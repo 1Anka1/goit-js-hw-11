@@ -77,9 +77,6 @@ After the first request, the button appears in the interface under the gallery.
 When re-submitting the form, the button is first hidden and then displayed after the request.
 In response, the back-end returns the totalHits property - the total number of images that match the search criteria (for a free account). If the user has reached the end of the collection, hide the button and display a notification with the text: "We're sorry, but you've reached the end of search results.".
 
-Optional
-ATTENTION
-The following features are optional, but they will be a good additional practice.
 
 Notification
 After the first request, for each new search, display a notification with the number of images found in total (totalHits property). Notification text: "Hooray! We found totalHits images."
@@ -89,24 +86,4 @@ Add the display of large images with the SimpleLightbox library for a full galle
 
 In your markup, wrap each image card in a link as said in the documentation.
 The library has a refresh() method that must be called every time after adding a new group of image cards.
-In order to add the CSS code of the library to the project, you need to add one more import, aside from the one described in the documentation.
 
-// Described in documentation
-import SimpleLightbox from "simplelightbox";
-// Additional styles import
-import "simplelightbox/dist/simple-lightbox.min.css";
-
-Page scrolling
-Make smooth page scrolling after the request and rendering each next group of images. Here is a hint code for you. Figure it out for yourself.
-
-const { height: cardHeight } = document
-  .querySelector(".gallery")
-  .firstElementChild.getBoundingClientRect();
-
-window.scrollBy({
-  top: cardHeight * 2,
-  behavior: "smooth",
-});
-
-Infinite scrolling
-Instead of the "Load more" button, you can make an infinite loading of images when scrolling the page. You are free to choose your ways of implementation and libraries.
